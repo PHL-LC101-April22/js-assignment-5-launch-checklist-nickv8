@@ -30,6 +30,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    
    
 }
 
