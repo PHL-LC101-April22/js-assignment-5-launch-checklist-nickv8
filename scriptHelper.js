@@ -58,14 +58,48 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         if (validatePilot === 'Is a number' || validateCopilot === 'Is a number') {
             alert('Pilot name or Copilot name cannot be a number')
             return event.preventDefault()
-        }
+        };
 
         if (validateCargoLevel === 'Not a number' || validateFuelLevel === 'Not a number') {
             alert('Cargo Mass or Fuel Level must be a number')
             return event.preventDefault()
-        }
+        };
 
-        list.children[0].innerHTML = `${pilot}`;
+        
+        let pilotStatus = document.getElementById("pilotStatus");
+        let copilotStatus = document.getElementById("copilotStatus");
+        let fuelStatus = document.getElementById("fuelStatus");
+        let launchStatus = document.getElementById("launchStatus");
+        let cargoStatus = document.getElementById("cargoStatus");
+            pilotStatus.innerHTML = `Pilot ${pilot} is ready for Launch`;
+            copilotStatus.innerHTML = `Copilot ${copilot} is ready for Launch`;
+            
+       
+        list.style.visibility = "visible";
+       
+        if (fuelLevel < 10000) {
+                fuelStatus.innerHTML = 'Fuel level is not high enough for Launch';
+                launchStatus.innerHTML = 'Shuttle Not Ready For Launch';
+                launchStatus.style.color = 'red';
+        } else if (cargoLevel > 10000) {
+            cargoStatus.innerHTML = 'Cargo mass is too large to Launch';
+            launchStatus.innerHTML = 'Shuttle Not Ready For Launch';
+            launchStatus.style.color = 'red';
+        } else {
+            launchStatus.style.color = 'green';
+            launchStatus.innerHTML = 'Shuttle ready for Launch'
+        };
+
+         
+
+
+        
+
+
+        
+            if (list.style.visibility = "visible") {
+                event.preventDefault()
+        }
 
     })
    
