@@ -1,21 +1,34 @@
 // Write your JavaScript code here!
 
 
-
-
-
 window.addEventListener("load", function() {
 
-//    let listedPlanets;
-//    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-//    let listedPlanetsResponse;
-//    listedPlanetsResponse.then(function (result) {
-//        listedPlanets = result;
-//        console.log(listedPlanets);
-//    }).then(function () {
-//        console.log(listedPlanets);
-//        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-//    })
+   let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   let listedPlanetsResponse = myFetch()
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+
+       let planetIndex = pickPlanet(listedPlanets);
+       console.log(listedPlanets[planetIndex].name)
+       
+   })
+    
+    
+   
+    
+    // let name = json.name;
+    // let diameter = json.diameter;
+    // let star = json.diameter;
+    // let distance = json.distance;
+    // let moons = json.moons;
+    // let imageUrl = json.image;
+    
+    // addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
     
 
  let pilot = document.querySelector("input[name=pilotName]").value;
@@ -27,6 +40,8 @@ window.addEventListener("load", function() {
     
         
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+
+    
     
    
 });
