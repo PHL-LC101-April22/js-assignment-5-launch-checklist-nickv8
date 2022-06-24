@@ -15,24 +15,14 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 
-       let planetIndex = pickPlanet(listedPlanets);
-       let planet = listedPlanets[planetIndex];
+       let planet = pickPlanet(listedPlanets);
+       
 
        addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image)
        
    })
     
-    
-   
-    
-    // let name = json.name;
-    // let diameter = json.diameter;
-    // let star = json.diameter;
-    // let distance = json.distance;
-    // let moons = json.moons;
-    // let imageUrl = json.image;
-    
-    // addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
+
     
 
  let pilot = document.querySelector("input[name=pilotName]").value;
