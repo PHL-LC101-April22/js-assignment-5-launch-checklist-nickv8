@@ -1,6 +1,8 @@
 // Write your JavaScript code here!
 
 
+
+
 window.addEventListener("load", function() {
 
    let listedPlanets;
@@ -14,7 +16,9 @@ window.addEventListener("load", function() {
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 
        let planetIndex = pickPlanet(listedPlanets);
-       console.log(listedPlanets[planetIndex].name)
+       let planet = listedPlanets[planetIndex];
+
+       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image)
        
    })
     
