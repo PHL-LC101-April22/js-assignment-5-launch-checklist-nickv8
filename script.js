@@ -3,7 +3,14 @@
 
 
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
+    
+    let list = document.getElementById("faultyItems");
+    list.style.visibility = "hidden";
+    let fuelStatus = document.getElementById('fuelStatus');
+    fuelStatus.textContent = "Fuel level high enough for launch";
+
+   let form = document.querySelector("form");
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -22,18 +29,26 @@ window.addEventListener("load", function() {
        
    })
     
-
     
 
- let pilot = document.querySelector("input[name=pilotName]").value;
- let copilot = document.querySelector("input[name=copilotName]").value;
- let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
-    let cargoLevel = document.querySelector("input[name=cargoMass").value;
-    let list = document.getElementById("faultyItems");
-    
-    
+    form.addEventListener("submit", function (event) {
         
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+        
+        let pilot = document.querySelector("input[name=pilotName]").value;
+        let copilot = document.querySelector("input[name=copilotName]").value;
+        let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+        let cargoLevel = document.querySelector("input[name=cargoMass").value;
+        
+       
+
+        formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+
+        event.preventDefault()
+        
+    
+    }); 
+        
+   
 
     
     
