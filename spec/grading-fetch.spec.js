@@ -62,7 +62,7 @@ let script = fs.readFileSync(path.resolve(__dirname, "../script.js"), 'utf8');
 describe("GRADING FETCH CALL TEST: ", function () {
 
    it("Student is fetching list of planets", async function() {
-      const result = await studentFunctions.myFetch();
+       const result = await studentFunctions.myFetch();
       expect(result).toEqual(planetsResponse);
    })
 
